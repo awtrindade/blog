@@ -13,6 +13,19 @@
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+
+    {% if site.posts.first.style %}
+  <link rel="stylesheet" href="/css/art-direction/{{ site.posts.first.style }}">
+{% elsif page.style %}
+  <link rel="stylesheet" href="/css/art-direction/{{ page.style }}">
+{% endif %}
+
+{% if site.posts.first.googlewebfonts %}
+  <link href='http://fonts.googleapis.com/css?family={{ site.posts.first.googlewebfonts }}'>
+{% elsif page.googlewebfonts %}
+  <link href='http://fonts.googleapis.com/css?family={{ page.googlewebfonts }}'>
+{% endif %}
+    
   </head>
 
   <body>
